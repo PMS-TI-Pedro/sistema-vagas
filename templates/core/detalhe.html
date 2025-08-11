@@ -1,0 +1,62 @@
+{% load crispy_forms_tags %}
+
+<div class="modal-body">
+    <div class="mb-3">
+        <label for="det-candidato"
+               class="form-label"
+               style="font-weight: bold;">Candidato</label>
+        <select id="det-candidato"
+                class="select form-select"
+                disabled>
+            <option selected>{{ detalhe.candidato }}</option>
+        </select>
+
+        <label for="det-responsavel"
+               class="form-label"
+               style="font-weight: bold; margin-top: 10px;">Responsável</label>
+        <select id="det-responsavel"
+                class="select form-select"
+                disabled>
+            <option selected>{{ detalhe.candidato.responsavel }}</option>
+        </select>
+
+        <label for="det-dtCadastro"
+               class="form-label"
+               style="font-weight: bold; margin-top: 10px;">Dt.Cadastro</label>
+        <input id="det-dtCadastro"
+               type="text"
+               class="datetimeinput form-control"
+               value="{{ detalhe.dtCadastro|date:"d/m/Y H:i" }}"
+               disabled>
+
+        <label for="det-dtAtendimento"
+               class="form-label"
+               style="font-weight: bold; margin-top: 10px;">Dt.Atendimento</label>
+        <input id="det-dtAtendimento"
+               type="text"
+               class="datetimeinput form-control"
+               value="{{ detalhe.dtAtendimento|date:"d/m/Y" }}"
+               disabled>
+
+        <label for="det-unidAtend"
+               class="form-label"
+               style="font-weight: bold; margin-top: 10px;">Unidade Atendimento</label>
+        <select id="det-unidAtend"
+                class="select form-select"
+                disabled>
+            {% if detalhe.unidadeAtend %}
+                <option selected>{{ detalhe.unidadeAtend }}</option>
+            {% else %}
+                <option selected></option>
+            {% endif %}
+        </select>
+
+        <label for="det-observacao"
+               class="form-label"
+               style="font-weight: bold; margin-top: 10px;">Observação</label>
+        <textarea id="det-observacao"
+                  class="form-control"
+                  disabled
+                  rows="5">{{ detalhe.observacao }}</textarea>
+    </div>
+</div>

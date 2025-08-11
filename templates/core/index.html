@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block conteudo %}
+    <div class="row titulo">
+        <h2>Educação | Lista de espera</h2>
+    </div>
+
+    <section id="seletores">
+        <div id="div-filtro"
+             class="wrapper">
+            <span id="titulo-filtro">Unidade e Modalidade</span>
+            <select id="creche"
+                    class="form-control col-12 seletor"
+                    onChange="listarModalidade(); resetarFiltro();">
+                <option value="0"
+                        disabled>Selecione uma unidade</option>
+                {% for unidade in unidades %}
+                    <option value={{unidade.id}}>{{unidade.tipoUnidade.sigla}} - {{unidade}} | {{unidade.endereco.rua}}, {{unidade.endereco.numero}} - {{unidade.endereco.bairro}}</option>
+                {% endfor %}
+            </select>
+
+            <div id="div-modalidade">
+                {% include "core/seletor.html" %}
+            </div>
+        </div>
+    </section>
+
+    <section id="status">
+        <div id="div-filtro"
+             class="wrapper">
+            <span id="titulo-filtro">Status</span>
+            <ul id="lista-filtro"
+                class="nav nav-pills nav-fill"
+                style="align-items: center !important;">
+                <li class="col-12 col-md-2 nav-item"
+                    onClick="filtrarTabela('1')">
+                    <a id="filtro-inicial"
+                       class="nav-link active"
+                       aria-current="page"
+                       href="#">Aguardando vaga</a>
+                </li>
+                <li class="col-12 col-md-2 nav-item"
+                    onClick="filtrarTabela('2')">
+                    <a class="nav-link"
+                       href="#">Aguardando transferência</a>
+                </li>
+                <li class="col-12 col-md-2 nav-item"
+                    onClick="filtrarTabela('3')">
+                    <a class="nav-link"
+                       href="#">Sem contato</a>
+                </li>
+                <li class="col-12 col-md-2 nav-item"
+                    onClick="filtrarTabela('4')">
+                    <a class="nav-link"
+                       href="#">Desistência</a>
+                </li>
+                <li class="col-12 col-md-2 nav-item"
+                    onClick="filtrarTabela('5')">
+                    <a class="nav-link"
+                       href="#">Atendido</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="tabela">
+        <div id="div-lista"
+             class="wrapper">
+            {% include "core/tabela.html" %}
+        </div>
+    </section>
+
+{% endblock conteudo %}
+
+{% block script %}
+    <script>
+        
+    </script>
+{% endblock script %}

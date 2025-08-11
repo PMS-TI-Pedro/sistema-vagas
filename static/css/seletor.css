@@ -1,0 +1,13 @@
+.seletor {
+    line-height: 2.5 !important;
+    margin-bottom: 10px;;
+    cursor: pointer;
+}
+
+.form-control {
+    border-radius: 0px !important;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0px !important;
+}

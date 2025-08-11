@@ -1,0 +1,9 @@
+<select id="modalidades"
+        class="form-control col-12 seletor"
+        onChange="filtrarTabela('1', '3'); resetarFiltro();">
+    <option value=""
+            disabled>Selecione uma modalidade</option>
+    {% for modalidade in modalidades %}
+        <option value={{modalidade.id}}>{{modalidade}} - {{modalidade.faixaEtaria}}</option>
+    {% endfor %}
+</select>

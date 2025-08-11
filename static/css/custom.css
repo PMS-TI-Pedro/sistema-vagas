@@ -1,0 +1,96 @@
+body {
+    margin: 0px;
+}
+
+.titulo {
+    text-align: center;
+    margin: 25px 0px 25px 0px !important;
+}
+
+#div-filtro{
+    margin: 20px 0px 10px 0px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #c6c6c682;
+}
+
+#titulo-filtro{
+    position: relative;
+    float: left;
+    top: -28px;
+    margin: 0px 10px;
+    font-style: oblique;
+    font-weight: bold;
+    background-color: white;
+}
+
+#lista-filtro{
+    left: -35px;
+    position: relative;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px
+}
+
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+    background-color: rgba(219, 218, 218, 0.123);
+}
+
+.menu li {
+    display: table;
+    position: relative;
+	flex-grow: 1;
+    text-align: center;
+    height: 80px;
+}
+
+.menu li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    right: -2px;
+    height: 35%;
+    background: rgba(24, 24, 24, 0.644);
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu li:last-child {
+	border-right: none;
+}
+
+.menu li a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+}
+
+.menu li a:hover {
+    color: #5592c7;
+}
+
+.menu li i {
+    position: relative;
+    right: -10px;
+}
+
+.modal-dialog,
+.modal-content {
+    /* 80% of window height */
+    height: 90%;
+}
+
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    overflow-y: scroll;
+}
